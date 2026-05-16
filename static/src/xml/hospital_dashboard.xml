@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<templates id="template" xml:space="preserve">
+    <t t-name="medicare_hms.HospitalDashboardTemplate" owl="1">
+        <div class="container-fluid p-4">
+            <h2 class="mb-4 text-primary">🏥 MediCare HMS Dashboard</h2>
+
+            <div t-if="state.isLoading" class="text-center mt-5">
+                <i class="fa fa-spinner fa-spin fa-3x fa-fw"></i>
+                <p>Loading data...</p>
+            </div>
+
+            <div t-else="" class="row">
+
+                <div class="col-md-4">
+                    <div class="card text-white bg-primary mb-3 shadow-sm" style="cursor: pointer;"
+                         t-on-click="() => this.openView('hospital.patient', [], 'All Patients')">
+                        <div class="card-header"><i class="fa fa-users"></i> Total Patients</div>
+                        <div class="card-body text-center"><h1 class="card-title"><t t-esc="state.stats.total_patients"/></h1></div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card text-white bg-info mb-3 shadow-sm" style="cursor: pointer;"
+                         t-on-click="() => this.openView('hospital.patient', [['gender', '=', 'male']], 'Male Patients')">
+                        <div class="card-header"><i class="fa fa-mars"></i> Male Patients</div>
+                        <div class="card-body text-center"><h1 class="card-title"><t t-esc="state.stats.male_patients"/></h1></div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card text-white bg-success mb-3 shadow-sm" style="cursor: pointer;"
+                         t-on-click="() => this.openView('hospital.patient', [['gender', '=', 'female']], 'Female Patients')">
+                        <div class="card-header"><i class="fa fa-venus"></i> Female Patients</div>
+                        <div class="card-body text-center"><h1 class="card-title"><t t-esc="state.stats.female_patients"/></h1></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </t>
+</templates>

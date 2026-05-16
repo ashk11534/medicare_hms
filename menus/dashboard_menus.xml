@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+    <menuitem id="menu_hospital_dashboard"
+              name="Dashboard"
+              parent="menu_hospital_root"
+              action="action_hospital_dashboard"
+              sequence="0"/>
+</odoo>
