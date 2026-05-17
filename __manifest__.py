@@ -4,7 +4,7 @@
     'name': 'MediCare HMS',
     'description': '''MediCare Hospital Management System''',
     'summary': '''MediCare Hospital Management System''',
-    'depends': [],
+    'depends': ['mail'],
     'data': [
         'security/groups.xml',
         'security/ir.model.access.csv',
@@ -16,6 +16,7 @@
     ],
     'assets': {
         'web.assets_backend': [
+            'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.5.0/chart.umd.min.js',
             'medicare_hms/static/src/js/hospital_dashboard.esm.js',
             'medicare_hms/static/src/xml/hospital_dashboard.xml',
         ]

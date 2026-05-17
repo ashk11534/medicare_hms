@@ -30,13 +30,14 @@
                             <field name="gender"/>
                         </group>
                         <group>
-                            <field name="age"/>
+                            <field name="age" readonly="state != 'draft'"/>
                         </group>
                     </group>
                     <group>
                         <field name="note"/>
                     </group>
                 </sheet>
+                <chatter/>
             </form>
         </field>
     </record>
